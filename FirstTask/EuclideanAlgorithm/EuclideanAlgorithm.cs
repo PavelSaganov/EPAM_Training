@@ -52,6 +52,13 @@ namespace EuclideanAlgorithm
             return numbers.Sum();
         }
 
+        /// <summary>
+        /// Метод, вычисляющий НОД двух величин
+        /// </summary>
+        /// <param name="milliseconds">Время в мс, затраченное на выполнение метода</param>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <returns></returns>
         static public int GetGCDByStein(out long milliseconds, int A, int B)
         {
             // Начало остчета
@@ -89,6 +96,12 @@ namespace EuclideanAlgorithm
             return B * k;
         }
 
+        /// <summary>
+        /// Метод, вычисляющий НОД двух величин методом Штейна
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <returns></returns>
         static public int GetGCDByStein(int A, int B)
         {
             // k - коэффициент, который будет увеличиваться вдвое, 

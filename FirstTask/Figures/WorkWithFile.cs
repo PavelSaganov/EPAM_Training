@@ -8,6 +8,11 @@ namespace Figures
 {
     static public class WorkWithFile
     {
+        /// <summary>
+        /// Метод для чтения txt файла фигур
+        /// </summary>
+        /// <param name="path">Путь к txt файлу</param>
+        /// <returns></returns>
         static public Figure[] ReadFiguresFromTxt(string path)
         {
             // Инициализируем массив, который будем заполнять
@@ -28,7 +33,11 @@ namespace Figures
             return figures.ToArray();
         }
 
-        // Определение, что это за фигура
+        /// <summary>
+        /// Определение, что эта за фигура
+        /// </summary>
+        /// <param name="splittedLine">Строка, разбитая по словам</param>
+        /// <returns></returns>
         private static Figure DetermineFigure(string[] splittedLine)
         {
             Figure addedFigure;
