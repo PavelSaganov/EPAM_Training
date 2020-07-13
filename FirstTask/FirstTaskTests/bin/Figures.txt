@@ -1,0 +1,10 @@
+Triangle, 3, 4, 2, 6, 6, 10
+Circle, 6, 2, 2
+Rectangle, 5, 11
+Triangle, 1, 0, -2, -3, 5, 6
+Rectangle, 12, 10
+Rectangle, 5, 11
+Circle, 2, -1, 4
+Rectangle, 2, 6
+Triangle, 3, 4, 2, 6, 6, 10
+Triangle, 3, 4, 2, 6, 6, 10
