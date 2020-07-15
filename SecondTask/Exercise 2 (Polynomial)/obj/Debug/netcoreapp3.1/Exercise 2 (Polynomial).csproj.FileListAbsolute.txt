@@ -1,0 +1,9 @@
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\bin\Debug\netcoreapp3.1\Exercise 2 (Polynomial).deps.json
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\bin\Debug\netcoreapp3.1\Exercise 2 (Polynomial).dll
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\bin\Debug\netcoreapp3.1\Exercise 2 (Polynomial).pdb
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).csprojAssemblyReference.cache
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).AssemblyInfoInputs.cache
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).AssemblyInfo.cs
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).csproj.CoreCompileInputs.cache
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).dll
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).pdb

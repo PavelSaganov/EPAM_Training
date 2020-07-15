@@ -1,0 +1,9 @@
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\bin\Debug\netcoreapp3.1\Exercise 3 (Products).deps.json
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\bin\Debug\netcoreapp3.1\Exercise 3 (Products).dll
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\bin\Debug\netcoreapp3.1\Exercise 3 (Products).pdb
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).csprojAssemblyReference.cache
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).AssemblyInfoInputs.cache
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).AssemblyInfo.cs
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).csproj.CoreCompileInputs.cache
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).dll
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).pdb

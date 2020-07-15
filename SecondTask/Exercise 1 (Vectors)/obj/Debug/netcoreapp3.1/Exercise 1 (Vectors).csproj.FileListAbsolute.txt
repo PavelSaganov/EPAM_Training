@@ -1,0 +1,9 @@
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\bin\Debug\netcoreapp3.1\Exercise 1 (Vectors).deps.json
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\bin\Debug\netcoreapp3.1\Exercise 1 (Vectors).dll
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\bin\Debug\netcoreapp3.1\Exercise 1 (Vectors).pdb
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).csprojAssemblyReference.cache
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).AssemblyInfoInputs.cache
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).AssemblyInfo.cs
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).csproj.CoreCompileInputs.cache
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).dll
+F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).pdb

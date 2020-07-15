@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Idoys56eOe8N/sLp4UonxVznOC0LK9LNUAwZjZg/mOPHEQx7UqOhzFsh1bzJDXRyeMlPJRxYYQXx6DUKIimddQ==",
+  "success": true,
+  "projectFilePath": "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 1 (Vectors)\\Exercise 1 (Vectors).csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
