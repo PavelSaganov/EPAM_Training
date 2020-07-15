@@ -11,7 +11,7 @@ namespace SecondTask.Tests
         {
             //arrange
             Cheese cheese = new Cheese("Bree", "Parmesan Luigi", 37.52);
-            int arrange = 37;
+            int arrange = 52;
 
             //actual
             int actual = (int)cheese;
@@ -32,6 +32,33 @@ namespace SecondTask.Tests
 
             //assert
             Assert.Equal(arrange, actual);
+        }
+
+        [Fact]
+        public void Converting_CheeseToBread()
+        {
+            Cheese cheese = new Cheese("Bree", "Parmesan Luigi", 37.52);
+
+            //actual
+            Bread actual = cheese; 
+
+            //assert
+            Assert.IsType<Bread>(actual);
+        }
+
+        [Fact]
+        public void SummingCoconuts()
+        {
+            //arrange
+            Coconut coconut = new Coconut("Common", "Coconaut", 40);
+            Coconut coconut2 = new Coconut("Common", "HardNutToCrack", 20);
+
+            //actual
+            Coconut actual = coconut + coconut2;
+            bool condition = ("Coconaut-HardNutToCrack" == actual.Name && 30 == actual.Cost);
+
+            //assert
+            Assert.True(condition);
         }
     }
 }

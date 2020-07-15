@@ -7,3 +7,12 @@ F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\obj\Debug\netcorea
 F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).csproj.CoreCompileInputs.cache
 F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).dll
 F:\Учеба\VS_projects\C#\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).pdb
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 3 (Products)\bin\Debug\netcoreapp3.1\Exercise 3 (Products).deps.json
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 3 (Products)\bin\Debug\netcoreapp3.1\Exercise 3 (Products).dll
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 3 (Products)\bin\Debug\netcoreapp3.1\Exercise 3 (Products).pdb
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).csprojAssemblyReference.cache
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).AssemblyInfoInputs.cache
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).AssemblyInfo.cs
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).dll
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 3 (Products)\obj\Debug\netcoreapp3.1\Exercise 3 (Products).pdb

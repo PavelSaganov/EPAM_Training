@@ -23,9 +23,13 @@ namespace Exercise_3__Products_.Abstract_Classes
             this.Cost = Cost;
         }
 
+        /// <summary>
+        /// Возвращает стоимость в копейках
+        /// </summary>
+        /// <param name="prod"></param>
         public static explicit operator int(Product prod)
         {
-            return (int)prod.Cost;
+            return (int)((prod.Cost - (int)prod.Cost) * 100);
         }
 
         public static explicit operator double(Product prod)

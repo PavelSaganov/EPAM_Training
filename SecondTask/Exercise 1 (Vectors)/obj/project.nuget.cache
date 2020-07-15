@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Idoys56eOe8N/sLp4UonxVznOC0LK9LNUAwZjZg/mOPHEQx7UqOhzFsh1bzJDXRyeMlPJRxYYQXx6DUKIimddQ==",
+  "dgSpecHash": "kDu4Prv/JV051Xwgp+VAuiq1LQiTppWho7eD+nr1KL4QiUIm1x+iSR7/RR5wbVJB2Gb0o6oMhwlq3l+Rn/VbLg==",
   "success": true,
-  "projectFilePath": "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 1 (Vectors)\\Exercise 1 (Vectors).csproj",
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 1 (Vectors)\\Exercise 1 (Vectors).csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],

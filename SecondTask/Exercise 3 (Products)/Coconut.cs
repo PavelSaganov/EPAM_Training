@@ -5,10 +5,9 @@ using System.Text;
 
 namespace Exercise_3__Products_
 {
-    public class Bread : Product
+    public class Coconut : Product
     {
-        public Bread(string Type, string Name, double Cost) : base(Type, Name, Cost) { }
-
+        public Coconut(string Type, string Name, double Cost) : base(Type, Name, Cost) { }
 
         /// <summary>
         /// Метод, позволяющий складывать объекты (наименование формируется как Name1-Name2, а стоимость - среднее арифметическое)
@@ -16,31 +15,29 @@ namespace Exercise_3__Products_
         /// <param name="coconut"></param>
         /// <param name="coconut2"></param>
         /// <returns></returns>
-        public static Bread operator +(Bread coconut, Bread coconut2)
+        public static Coconut operator +(Coconut coconut, Coconut coconut2)
         {
             if (coconut.Type != coconut2.Type)
                 throw new Exception("Нельзя слаживать продукты разных видов товаров");
-            return new Bread(coconut.Type, coconut.Name + "-" + coconut2.Name, (coconut.Cost + coconut2.Cost) / 2);
+            return new Coconut(coconut.Type, coconut.Name + "-" + coconut2.Name, (coconut.Cost + coconut2.Cost) / 2);
         }
 
         /// <summary>
-        /// Преобразование из Coconut в Bread
+        /// Преобразование из Bread в Coconut
         /// </summary>
         /// <param name="product"></param>
-        public static explicit operator Bread(Coconut product)
+        public static explicit operator Coconut(Bread product)
         {
-            return new Bread(product.Type, product.Name, product.Cost);
+            return new Coconut(product.Type, product.Name, product.Cost);
         }
 
         /// <summary>
-        /// Преобразование из Cheese в Bread
+        /// Преобразование из Cheese в Coconut
         /// </summary>
         /// <param name="product"></param>
-        public static implicit operator Bread(Cheese cheese)
+        public static explicit operator Coconut(Cheese cheese)
         {
-            return new Bread (cheese.Type, cheese.Name, cheese.Cost);
+            return new Coconut(cheese.Type, cheese.Name, cheese.Cost);
         }
-
-
     }
 }

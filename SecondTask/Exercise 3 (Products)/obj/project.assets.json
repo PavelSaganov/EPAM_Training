@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 3 (Products)\\Exercise 3 (Products).csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 3 (Products)\\Exercise 3 (Products).csproj",
       "projectName": "Exercise 3 (Products)",
-      "projectPath": "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 3 (Products)\\Exercise 3 (Products).csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 3 (Products)\\Exercise 3 (Products).csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 3 (Products)\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 3 (Products)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

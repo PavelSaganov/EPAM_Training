@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 2 (Polynomial)\\Exercise 2 (Polynomial).csproj": {}
+    "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 2 (Polynomial)\\Exercise 2 (Polynomial).csproj": {}
   },
   "projects": {
-    "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 2 (Polynomial)\\Exercise 2 (Polynomial).csproj": {
+    "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 2 (Polynomial)\\Exercise 2 (Polynomial).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 2 (Polynomial)\\Exercise 2 (Polynomial).csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 2 (Polynomial)\\Exercise 2 (Polynomial).csproj",
         "projectName": "Exercise 2 (Polynomial)",
-        "projectPath": "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 2 (Polynomial)\\Exercise 2 (Polynomial).csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 2 (Polynomial)\\Exercise 2 (Polynomial).csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 2 (Polynomial)\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 2 (Polynomial)\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

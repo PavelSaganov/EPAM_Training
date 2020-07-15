@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 1 (Vectors)\\Exercise 1 (Vectors).csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 1 (Vectors)\\Exercise 1 (Vectors).csproj",
       "projectName": "Exercise 1 (Vectors)",
-      "projectPath": "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 1 (Vectors)\\Exercise 1 (Vectors).csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 1 (Vectors)\\Exercise 1 (Vectors).csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "F:\\Учеба\\VS_projects\\C#\\SecondTask\\Exercise 1 (Vectors)\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 1 (Vectors)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

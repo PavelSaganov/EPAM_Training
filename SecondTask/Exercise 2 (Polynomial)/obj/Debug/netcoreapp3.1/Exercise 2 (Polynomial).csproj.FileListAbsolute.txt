@@ -7,3 +7,12 @@ F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcor
 F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).csproj.CoreCompileInputs.cache
 F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).dll
 F:\Учеба\VS_projects\C#\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).pdb
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 2 (Polynomial)\bin\Debug\netcoreapp3.1\Exercise 2 (Polynomial).deps.json
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 2 (Polynomial)\bin\Debug\netcoreapp3.1\Exercise 2 (Polynomial).dll
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 2 (Polynomial)\bin\Debug\netcoreapp3.1\Exercise 2 (Polynomial).pdb
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).csprojAssemblyReference.cache
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).AssemblyInfoInputs.cache
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).AssemblyInfo.cs
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).dll
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 2 (Polynomial)\obj\Debug\netcoreapp3.1\Exercise 2 (Polynomial).pdb

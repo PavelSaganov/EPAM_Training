@@ -7,3 +7,12 @@ F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreap
 F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).csproj.CoreCompileInputs.cache
 F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).dll
 F:\Учеба\VS_projects\C#\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).pdb
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 1 (Vectors)\bin\Debug\netcoreapp3.1\Exercise 1 (Vectors).deps.json
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 1 (Vectors)\bin\Debug\netcoreapp3.1\Exercise 1 (Vectors).dll
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 1 (Vectors)\bin\Debug\netcoreapp3.1\Exercise 1 (Vectors).pdb
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).csprojAssemblyReference.cache
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).AssemblyInfoInputs.cache
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).AssemblyInfo.cs
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).dll
+C:\Users\User\source\repos\EPAM_Training\SecondTask\Exercise 1 (Vectors)\obj\Debug\netcoreapp3.1\Exercise 1 (Vectors).pdb
