@@ -688,6 +688,16 @@
           "Microsoft.NET.Test.Sdk": "16.5.0"
         }
       },
+      "Exercise 1 (Vectors)/1.0.0": {
+        "runtime": {
+          "Exercise 1 (Vectors).dll": {}
+        }
+      },
+      "Exercise 2 (Polynomial)/1.0.0": {
+        "runtime": {
+          "Exercise 2 (Polynomial).dll": {}
+        }
+      },
       "Exercise 3 (Products)/1.0.0": {
         "runtime": {
           "Exercise 3 (Products).dll": {}
@@ -1050,6 +1060,16 @@
       "sha512": "sha512-3eq5cGXbEJkqW9nwLuXwtxy9B5gMA8i7HW4rN63AhAvy5UvEcQbZnve23wx/oPrkyg/4CbfNhxkBezS0b1oUdQ==",
       "path": "xunit.runner.visualstudio/2.4.0",
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
+    },
+    "Exercise 1 (Vectors)/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Exercise 2 (Polynomial)/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Exercise 3 (Products)/1.0.0": {
       "type": "project",

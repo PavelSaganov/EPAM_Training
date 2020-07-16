@@ -194,3 +194,7 @@ C:\Users\User\source\repos\EPAM_Training\SecondTask\SecondTask.Tests\obj\Debug\n
 C:\Users\User\source\repos\EPAM_Training\SecondTask\SecondTask.Tests\obj\Debug\netcoreapp3.1\SecondTask.Tests.dll
 C:\Users\User\source\repos\EPAM_Training\SecondTask\SecondTask.Tests\obj\Debug\netcoreapp3.1\SecondTask.Tests.pdb
 C:\Users\User\source\repos\EPAM_Training\SecondTask\SecondTask.Tests\obj\Debug\netcoreapp3.1\SecondTask.Tests.genruntimeconfig.cache
+C:\Users\User\source\repos\EPAM_Training\SecondTask\SecondTask.Tests\bin\Debug\netcoreapp3.1\Exercise 1 (Vectors).dll
+C:\Users\User\source\repos\EPAM_Training\SecondTask\SecondTask.Tests\bin\Debug\netcoreapp3.1\Exercise 2 (Polynomial).dll
+C:\Users\User\source\repos\EPAM_Training\SecondTask\SecondTask.Tests\bin\Debug\netcoreapp3.1\Exercise 1 (Vectors).pdb
+C:\Users\User\source\repos\EPAM_Training\SecondTask\SecondTask.Tests\bin\Debug\netcoreapp3.1\Exercise 2 (Polynomial).pdb

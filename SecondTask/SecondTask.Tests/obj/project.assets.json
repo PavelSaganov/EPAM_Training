@@ -902,6 +902,26 @@
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       },
+      "Exercise 1 (Vectors)/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Exercise 1 (Vectors).dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Exercise 1 (Vectors).dll": {}
+        }
+      },
+      "Exercise 2 (Polynomial)/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Exercise 2 (Polynomial).dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Exercise 2 (Polynomial).dll": {}
+        }
+      },
       "Exercise 3 (Products)/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -3471,6 +3491,16 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
+    "Exercise 1 (Vectors)/1.0.0": {
+      "type": "project",
+      "path": "../Exercise 1 (Vectors)/Exercise 1 (Vectors).csproj",
+      "msbuildProject": "../Exercise 1 (Vectors)/Exercise 1 (Vectors).csproj"
+    },
+    "Exercise 2 (Polynomial)/1.0.0": {
+      "type": "project",
+      "path": "../Exercise 2 (Polynomial)/Exercise 2 (Polynomial).csproj",
+      "msbuildProject": "../Exercise 2 (Polynomial)/Exercise 2 (Polynomial).csproj"
+    },
     "Exercise 3 (Products)/1.0.0": {
       "type": "project",
       "path": "../Exercise 3 (Products)/Exercise 3 (Products).csproj",
@@ -3479,6 +3509,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Exercise 1 (Vectors) >= 1.0.0",
+      "Exercise 2 (Polynomial) >= 1.0.0",
       "Exercise 3 (Products) >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "coverlet.collector >= 1.2.0",
@@ -3516,6 +3548,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 1 (Vectors)\\Exercise 1 (Vectors).csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 1 (Vectors)\\Exercise 1 (Vectors).csproj"
+            },
+            "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 2 (Polynomial)\\Exercise 2 (Polynomial).csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 2 (Polynomial)\\Exercise 2 (Polynomial).csproj"
+            },
             "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 3 (Products)\\Exercise 3 (Products).csproj": {
               "projectPath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\SecondTask\\Exercise 3 (Products)\\Exercise 3 (Products).csproj"
             }

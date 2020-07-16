@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -14,6 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Exercise 1 (Vectors)\Exercise 1 (Vectors).csproj" />
+    <ProjectReference Include="..\Exercise 2 (Polynomial)\Exercise 2 (Polynomial).csproj" />
     <ProjectReference Include="..\Exercise 3 (Products)\Exercise 3 (Products).csproj" />
   </ItemGroup>
 

@@ -4,7 +4,7 @@ using Xunit;
 
 namespace SecondTask.Tests
 {
-    public class Exercise3
+    public class Exercise3Tests
     {
         [Fact]
         public void Converting_CheeseCost_37and52_to_int()
