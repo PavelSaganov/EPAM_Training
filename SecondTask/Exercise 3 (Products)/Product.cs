@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Exercise_3__Products_.Abstract_Classes
+﻿namespace Exercise_3__Products_
 {
-    public abstract class Product
+    public class Product
     {
         public string Type { get; set; }
         public string Name { get; set; }
@@ -16,11 +12,16 @@ namespace Exercise_3__Products_.Abstract_Classes
         /// <param name="Type">Тип продукта</param>
         /// <param name="Name">Наименование продукта</param>
         /// <param name="Cost">Стоимость продукта</param>
-        public Product (string Type, string Name, double Cost)
+        public Product(string Type, string Name, double Cost)
         {
             this.Type = Type;
             this.Name = Name;
             this.Cost = Cost;
+        }
+
+        public override string ToString()
+        {
+            return $"{ Type }, { Name }, { Cost }";
         }
 
         /// <summary>

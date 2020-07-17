@@ -1,7 +1,4 @@
-﻿using Exercise_3__Products_.Abstract_Classes;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
 namespace Exercise_3__Products_
 {

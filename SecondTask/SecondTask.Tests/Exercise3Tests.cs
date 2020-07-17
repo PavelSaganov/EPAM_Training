@@ -1,5 +1,4 @@
 using Exercise_3__Products_;
-using System;
 using Xunit;
 
 namespace SecondTask.Tests
@@ -40,7 +39,7 @@ namespace SecondTask.Tests
             Cheese cheese = new Cheese("Bree", "Parmesan Luigi", 37.52);
 
             //actual
-            Bread actual = cheese; 
+            Bread actual = cheese;
 
             //assert
             Assert.IsType<Bread>(actual);

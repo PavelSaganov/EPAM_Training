@@ -4,6 +4,7 @@ namespace Exercise_2__Polynomial_
 {
     public class Polynomial
     {
+        // Коэффициенты публичные для того, чтобы использовать их в PolynomialEqualityComparer
         public double[] coefficients;
 
         ///<summary>
@@ -13,6 +14,12 @@ namespace Exercise_2__Polynomial_
         public Polynomial(params double[] coefficients)
         {
             this.coefficients = coefficients;
+        }
+
+        public double this[int i]
+        {
+            get { return coefficients[i]; }
+            set { coefficients[i] = value; }
         }
 
         public double GetFunctionResult(double x)
@@ -33,7 +40,7 @@ namespace Exercise_2__Polynomial_
         {
             // Ищем максимальную степень полинома
             int itemsCount = Math.Max(polynomial1.coefficients.Length, polynomial2.coefficients.Length);
-            var result = new double[itemsCount]; 
+            var result = new double[itemsCount];
 
             for (int i = 0; i < itemsCount; i++)
             {

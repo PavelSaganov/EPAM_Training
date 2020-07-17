@@ -1,7 +1,4 @@
-﻿using Exercise_3__Products_.Abstract_Classes;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
 namespace Exercise_3__Products_
 {
@@ -38,7 +35,7 @@ namespace Exercise_3__Products_
         /// <param name="product"></param>
         public static implicit operator Bread(Cheese cheese)
         {
-            return new Bread (cheese.Type, cheese.Name, cheese.Cost);
+            return new Bread(cheese.Type, cheese.Name, cheese.Cost);
         }
 
 
