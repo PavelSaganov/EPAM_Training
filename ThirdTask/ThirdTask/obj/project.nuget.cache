@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3hVlWwiGpa+RLUUfnTBW4mACtC/KuV0Pn1ymDzY52UxkZbSZALoIbpukTe2QyO1J8g/IV+tNiS81iNfmUAFDNQ==",
+  "dgSpecHash": "CjXxCivBpuz0ePqts03NCKRVnF1L9nlIXlv8FAHm150VGfF8UbxPtEgifHcF0uSazQC1hf4heIsSo+hwzjluhQ==",
   "success": true,
-  "projectFilePath": "F:\\Учеба\\VS_projects\\C#\\ThirdTask\\ThirdTask\\ThirdTask.csproj",
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\ThirdTask\\ThirdTask\\ThirdTask.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],

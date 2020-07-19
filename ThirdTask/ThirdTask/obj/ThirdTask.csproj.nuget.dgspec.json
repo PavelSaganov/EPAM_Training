@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Учеба\\VS_projects\\C#\\ThirdTask\\ThirdTask\\ThirdTask.csproj": {}
+    "C:\\Users\\User\\source\\repos\\EPAM_Training\\ThirdTask\\ThirdTask\\ThirdTask.csproj": {}
   },
   "projects": {
-    "F:\\Учеба\\VS_projects\\C#\\ThirdTask\\ThirdTask\\ThirdTask.csproj": {
+    "C:\\Users\\User\\source\\repos\\EPAM_Training\\ThirdTask\\ThirdTask\\ThirdTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Учеба\\VS_projects\\C#\\ThirdTask\\ThirdTask\\ThirdTask.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\EPAM_Training\\ThirdTask\\ThirdTask\\ThirdTask.csproj",
         "projectName": "ThirdTask",
-        "projectPath": "F:\\Учеба\\VS_projects\\C#\\ThirdTask\\ThirdTask\\ThirdTask.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\ThirdTask\\ThirdTask\\ThirdTask.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "F:\\Учеба\\VS_projects\\C#\\ThirdTask\\ThirdTask\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\ThirdTask\\ThirdTask\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
