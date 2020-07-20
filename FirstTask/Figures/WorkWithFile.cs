@@ -16,21 +16,21 @@ namespace Figures
         static public Figure[] ReadFiguresFromTxt(string path)
         {
             // Инициализируем массив, который будем заполнять
-            List<Figure> figures = new  List<Figure>();
+            Figure[] figures = new Figure[File.ReadAllLines(path).Length];
             string line;
             string[] splittedLine;
 
             using (StreamReader sr = new StreamReader(path))
             {
-                while ((line = sr.ReadLine()) != null)
+                for (int i = 0; (line = sr.ReadLine()) != null; i++)
                 {
                     splittedLine = line.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     Figure addedFigure = DetermineFigure(splittedLine);
-                    figures.Add(addedFigure);
+                    figures[i] = addedFigure;
                 }
             }
 
-            return figures.ToArray();
+            return figures;
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Figures
 
         public override int GetHashCode()
         {
-            return Width.GetHashCode() + Hight.GetHashCode();
+            return (Width + Hight * Hight * Width).GetHashCode() + (Hight + Hight * Width * Width).GetHashCode();
         }
 
         public override string ToString()

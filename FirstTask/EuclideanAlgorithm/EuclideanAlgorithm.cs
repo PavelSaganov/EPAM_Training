@@ -5,6 +5,8 @@ namespace EuclideanAlgorithm
 {
     static public class EuclideanAlgorithm
     {
+        delegate void DoIt(params int[] numbers);
+
         static public int GetGCDByEuclid(out long milliseconds, params int[] numbers)
         {
             // Начало остчета
@@ -31,7 +33,12 @@ namespace EuclideanAlgorithm
             return numbers.Sum();
         }
 
-        static public int GetGCDByEuclid(params int[] numbers)
+        /// <summary>
+        /// Поиск НОД для любого количества целых чисел
+        /// </summary>
+        /// <param name="numbers">Целые числа</param>
+        /// <returns>НОД чисел</returns>
+        static private int GetEuclideanGCD(params int[] numbers)
         {
             if (numbers.Length == 0)
                 throw new Exception("Не передано ни одно число");
@@ -52,13 +59,29 @@ namespace EuclideanAlgorithm
             return numbers.Sum();
         }
 
+        // Ниже - три public метода, которые вызывают private метод (GetEuclideanGCD) поиска НОД
+        static public int GetGCDByEuclid(int number1, int number2, int number3)
+        {
+            return GetEuclideanGCD(number1, number2, number3);
+        }
+
+        static public int GetGCDByEuclid(int number1, int number2, int number3, int number4)
+        {
+            return GetEuclideanGCD(number1, number2, number3, number4);
+        }
+
+        static public int GetGCDByEuclid(int number1, int number2, int number3, int number4, int number5)
+        {
+            return GetEuclideanGCD(number1, number2, number3, number4, number5);
+        }
+
         /// <summary>
-        /// Метод, вычисляющий НОД двух величин
+        /// Метод, вычисляющий НОД двух величин методом Штейна и возвращающий время, затраченное не выполнение метода
         /// </summary>
         /// <param name="milliseconds">Время в мс, затраченное на выполнение метода</param>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
-        /// <returns></returns>
+        /// <param name="A">Первое число</param>
+        /// <param name="B">Второе число</param>
+        /// <returns>Результат и время</returns>
         static public int GetGCDByStein(out long milliseconds, int A, int B)
         {
             // Начало остчета
