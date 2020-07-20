@@ -1,8 +1,9 @@
 ﻿using System;
+using ThirdTask.Materials;
 
 namespace Figures
 {
-    public abstract class Figure
+    public abstract class Figure : IPaper, ICelluloseTape
     {
         public abstract double Perimeter { get; }
         public abstract double Square { get; }
