@@ -1,0 +1,9 @@
+C:\Users\User\source\repos\EPAM_Training\ThirdTask\ThirdTask\bin\Debug\netcoreapp3.1\ThirdTask.deps.json
+C:\Users\User\source\repos\EPAM_Training\ThirdTask\ThirdTask\bin\Debug\netcoreapp3.1\ThirdTask.dll
+C:\Users\User\source\repos\EPAM_Training\ThirdTask\ThirdTask\bin\Debug\netcoreapp3.1\ThirdTask.pdb
+C:\Users\User\source\repos\EPAM_Training\ThirdTask\ThirdTask\obj\Debug\netcoreapp3.1\ThirdTask.csprojAssemblyReference.cache
+C:\Users\User\source\repos\EPAM_Training\ThirdTask\ThirdTask\obj\Debug\netcoreapp3.1\ThirdTask.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\EPAM_Training\ThirdTask\ThirdTask\obj\Debug\netcoreapp3.1\ThirdTask.AssemblyInfo.cs
+C:\Users\User\source\repos\EPAM_Training\ThirdTask\ThirdTask\obj\Debug\netcoreapp3.1\ThirdTask.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\EPAM_Training\ThirdTask\ThirdTask\obj\Debug\netcoreapp3.1\ThirdTask.dll
+C:\Users\User\source\repos\EPAM_Training\ThirdTask\ThirdTask\obj\Debug\netcoreapp3.1\ThirdTask.pdb
