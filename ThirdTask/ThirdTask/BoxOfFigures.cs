@@ -9,7 +9,7 @@ using System.Text;
 
 namespace ThirdTask
 {
-    class BoxOfFigures
+    public class BoxOfFigures
     {
         private Figure[] Figures { get; set; } = new Figure[20];
 
@@ -18,6 +18,8 @@ namespace ThirdTask
             get => Figures.ElementAt(i);
             set => Figures[i] = value;
         }
+
+        public BoxOfFigures(Figure[] Figures) => this.Figures = Figures;
 
         public void Add(Figure figure)
         {

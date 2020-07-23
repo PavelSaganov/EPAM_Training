@@ -2,7 +2,7 @@
 
 namespace Enumerables
 {
-    enum Colors
+    public enum Colors
     {
         Red,
         Green,
