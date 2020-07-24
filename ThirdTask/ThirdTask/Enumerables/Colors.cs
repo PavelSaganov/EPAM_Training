@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Enumerables
+﻿namespace Enumerables
 {
     public enum Colors
     {
@@ -12,6 +10,7 @@ namespace Enumerables
         Purple,
         Pink,
         Black,
-        Gray
+        Gray,
+        WithoutColor
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Enumerables;
 
 namespace Figures
 {
@@ -12,7 +10,13 @@ namespace Figures
         public override double Perimeter { get => 2 * Width + 2 * Hight; }
         public override double Square { get => Width * Hight; }
 
-        public Rectangle(double Width, double Hight)
+        public Rectangle(double Width, double Hight, Materials material) : base(material)
+        {
+            this.Width = Width;
+            this.Hight = Hight;
+        }
+
+        public Rectangle(double Width, double Hight, Colors color) : base(color)
         {
             this.Width = Width;
             this.Hight = Hight;
@@ -30,12 +34,12 @@ namespace Figures
 
         public override int GetHashCode()
         {
-            return Width.GetHashCode() + Hight.GetHashCode();
+            return (Width * Hight * Hight).GetHashCode() + (Hight * Width * Width).GetHashCode();
         }
 
         public override string ToString()
         {
-            return $"{ GetType().Name }, { Width }, { Hight }";
+            return $"{ GetType().Name }, { Width }, { Hight }, { Color }";
         }
     }
 }

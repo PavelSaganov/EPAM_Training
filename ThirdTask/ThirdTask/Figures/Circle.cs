@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Enumerables;
+using System;
 using System.Drawing;
-using System.Text;
 
 namespace Figures
 {
@@ -13,7 +12,13 @@ namespace Figures
         public override double Perimeter { get => Math.PI * 2 * Radius; }
         public override double Square { get => Math.PI * Radius * Radius; }
 
-        public Circle(int x, int y, double radius)
+        public Circle(int x, int y, double radius, Materials material) : base(material)
+        {
+            Center = new Point(x, y);
+            Radius = radius;
+        }
+
+        public Circle(int x, int y, double radius, Colors color) : base(color)
         {
             Center = new Point(x, y);
             Radius = radius;
@@ -36,7 +41,7 @@ namespace Figures
 
         public override string ToString()
         {
-            return $"{ GetType().Name }, { Center.X }, { Center.Y }, { Radius }";
+            return $"{ GetType().Name }, { Center.X }, { Center.Y }, { Radius }, { Color }";
         }
     }
 }

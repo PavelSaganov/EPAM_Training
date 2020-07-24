@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Enumerables;
+using System;
 using System.Drawing;
-using System.Text;
 
 namespace Figures
 {
@@ -28,7 +27,14 @@ namespace Figures
             }
         }
 
-        public Triangle(int x1, int y1, int x2, int y2, int x3, int y3)
+        public Triangle(int x1, int y1, int x2, int y2, int x3, int y3, Materials material) : base(material)
+        {
+            FirstPoint = new Point(x1, y1);
+            SecondPoint = new Point(x2, y2);
+            ThirdPoint = new Point(x3, y3);
+        }
+
+        public Triangle(int x1, int y1, int x2, int y2, int x3, int y3, Colors color) : base(color)
         {
             FirstPoint = new Point(x1, y1);
             SecondPoint = new Point(x2, y2);
@@ -57,7 +63,7 @@ namespace Figures
 
         public override string ToString()
         {
-            return $"{ GetType().Name }, { FirstPoint.X }, { FirstPoint.Y }, { SecondPoint.X }, { SecondPoint.Y }, { ThirdPoint.X }, { ThirdPoint.Y }";
+            return $"{ GetType().Name }, { FirstPoint.X }, { FirstPoint.Y }, { SecondPoint.X }, { SecondPoint.Y }, { ThirdPoint.X }, { ThirdPoint.Y }, { Color }";
         }
     }
 }
