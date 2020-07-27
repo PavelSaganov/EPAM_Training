@@ -41,6 +41,25 @@ namespace Figures
             ThirdPoint = new Point(x3, y3);
         }
 
+        /// <summary>
+        /// Вырезание из одной фигуры другую, меньшей площади
+        /// </summary>
+        /// <param name="x1"></param>
+        /// <param name="y1"></param>
+        /// <param name="x2"></param>
+        /// <param name="y2"></param>
+        /// <param name="x3"></param>
+        /// <param name="y3"></param>
+        /// <param name="figure"></param>
+        public Triangle(int x1, int y1, int x2, int y2, int x3, int y3, Figure figure)
+        {
+            FirstPoint = new Point(x1, y1);
+            SecondPoint = new Point(x2, y2);
+            ThirdPoint = new Point(x3, y3);
+            if (figure.Square < Square)
+                throw new Exception("Невозможно вырезать из меньшей фигуры большую!");
+        }
+
         private double GetSide(Point FirstPoint, Point SecondPoint)
         {
             return Math.Abs(Math.Pow((FirstPoint.X - SecondPoint.X), 2) + Math.Pow((FirstPoint.Y - SecondPoint.Y), 2));
@@ -53,12 +72,12 @@ namespace Figures
             Triangle t = obj as Triangle;
             if (t == null)
                 return false;
-            return t.FirstPoint == FirstPoint && t.SecondPoint == t.SecondPoint && t.ThirdPoint == ThirdPoint;
+            return t.FirstPoint == FirstPoint && t.SecondPoint == t.SecondPoint && t.ThirdPoint == ThirdPoint && t.Color == Color;
         }
 
         public override int GetHashCode()
         {
-            return FirstPoint.GetHashCode() + SecondPoint.GetHashCode() + ThirdPoint.GetHashCode();
+            return FirstPoint.GetHashCode() + SecondPoint.GetHashCode() * ThirdPoint.GetHashCode() + Color.GetHashCode();
         }
 
         public override string ToString()

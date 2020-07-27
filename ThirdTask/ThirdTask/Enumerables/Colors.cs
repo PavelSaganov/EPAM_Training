@@ -2,6 +2,7 @@
 {
     public enum Colors
     {
+        Uncolored,
         Red,
         Green,
         Blue,
@@ -11,6 +12,6 @@
         Pink,
         Black,
         Gray,
-        WithoutColor
+        Colorless
     }
 }

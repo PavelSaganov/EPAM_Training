@@ -28,11 +28,15 @@ namespace ThirdTask
         public Figure GetFigure(int i)
         {
             var returnedFigure = Figures[i];
-            Figures.ToList().Remove(returnedFigure);
+            var a = Figures.ToList();
+            a.RemoveAt(i);
+            Figures = a.ToArray();
             return returnedFigure;
         }
 
         public BoxOfFigures(Figure[] Figures) => this.Figures = Figures;
+
+        public BoxOfFigures() { }
 
         public void Add(Figure figure)
         {
@@ -53,8 +57,8 @@ namespace ThirdTask
         public Figure GetSimilarFigure(Figure figure)
         {
             try
-            { 
-                return Figures.Where(f => f.Equals(figure)).First(); 
+            {
+                return Figures.Where(f => f.Equals(figure)).First();
             }
             catch (ArgumentNullException)
             { return null; }
@@ -64,9 +68,13 @@ namespace ThirdTask
         public double GetTotalSquare => Figures.Sum(f => f.Square);
         public double GetTotalPerimeter => Figures.Sum(f => f.Perimeter);
 
-        public List<Circle> GetCircles()
+        /// <summary>
+        /// Получение кругов из коробки
+        /// </summary>
+        /// <returns></returns>
+        public List<Figure> GetCircles()
         {
-            return (List<Circle>)Figures.Where(f => f is Circle);
+            return Figures.Where(f => f is Circle).ToList();
         }
 
         /// <summary>
@@ -75,9 +83,9 @@ namespace ThirdTask
         /// <returns></returns>
         public List<Figure> GetCelluloseFigures()
         {
-            // Если фигура бесцветная, то это пленочная фигура, т.к. бумага не может быть бесцветной
-            return Figures.Where(f => f.Color == Colors.WithoutColor).ToList();
+            return Figures.Where(f => f.Color == Colors.Colorless).ToList();
         }
+
 
         /// <summary>
         /// Чтение фигур с помощью XmlReader
@@ -85,16 +93,59 @@ namespace ThirdTask
         /// <param name="path"></param>
         public void ReadFiguresByXmlReader(string path)
         {
-            Figures = WorkWithFile.ReadXmlFile(path);
+            Figures = WorkWithFile.ReadXmlFileByXmlReader(path);
         }
 
         /// <summary>
         /// Запись фигур с помощью XmlWriter
         /// </summary>
         /// <param name="path"></param>
-        public void WriteFiguresByXmlReader(string path, Materials material)
+        public void WriteCelluloseFiguresByXmlWriter(string path)
         {
-            WorkWithFile.WriteToXmlFile(path, Figures.Where(f => f.Color == Colors.WithoutColor).ToArray());
+            WorkWithFile.WriteXmlFileByXmlWriter(path, Figures);
+        }
+
+        /// <summary>
+        /// Запись фигур с помощью XmlWriter, которые сделаны из бумаги или пленки
+        /// </summary>
+        /// <param name="path"></param>
+        public void WriteFiguresMadeFromMaterialByXmlWriter(string path, Materials material)
+        {
+            if (material == Materials.CelluloseTape)
+                WorkWithFile.WriteXmlFileByXmlWriter(path, Figures.Where(f => f.Color == Colors.Colorless).ToArray());
+            if (material == Materials.Paper)
+                WorkWithFile.WriteXmlFileByXmlWriter(path, Figures.Where(f => f.Color != Colors.Colorless).ToArray());
+        }
+
+
+        /// <summary>
+        /// Чтение фигур из xml файла с помощью StreamReader
+        /// </summary>
+        /// <param name="path">Путь к файлу/param>
+        public void ReadFiguresByStreamReader(string path)
+        {
+            Figures = WorkWithFile.ReadXmlFileByStreamReader(path);
+        }
+
+        /// <summary>
+        /// Чтение фигур из xml файла с помощью StreamWriter
+        /// </summary>
+        /// <param name="path">Путь к файлу</param>
+        public void ReadFiguresByStreamWriter(string path)
+        {
+            WorkWithFile.WriteXmlFileByStreamWriter(path, Figures);
+        }
+
+        /// <summary>
+        /// Запись фигур с помощью StreamWriter, которые сделаны из бумаги или пленки
+        /// </summary>
+        /// <param name="path">Путь к файлу/param>
+        public void WriteFiguresMadeFromMaterialByStreamWriter(string path, Materials material)
+        {
+             if (material == Materials.CelluloseTape)
+                WorkWithFile.WriteXmlFileByStreamWriter(path, Figures.Where(f => f.Color == Colors.Colorless).ToArray());
+            if (material == Materials.Paper)
+                WorkWithFile.WriteXmlFileByStreamWriter(path, Figures.Where(f => f.Color != Colors.Colorless).ToArray());
         }
     }
 }
