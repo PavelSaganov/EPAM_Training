@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rgMM2hmB1Bth660I7WAr9C9OWMrm7R2GVTIFlHAo3NDkenIFM9Rblnw6/5tyRz++TkCQsdpIW1Td4YE3tQW/tA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\EPAM_Training\\FourthTask\\Server\\Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
