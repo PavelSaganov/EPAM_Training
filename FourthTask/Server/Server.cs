@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Server
@@ -13,31 +14,38 @@ namespace Server
         Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         event Action<string, string> NotifySubs;
 
-        public int NumbOfListeners { get; set; } = 1;
+        /// <summary>
+        /// Max number of clients, that can connect to server
+        /// </summary>
+        public int NumbOfListeners { get; set; } = 5;
 
-        static void Main(string[] args)
-        {
-            
-
-        }
-
+        /// <summary>
+        /// Starts the server
+        /// </summary>
+        /// <param name="port">The port from which the server will accept connections</param>
         public void Start(int port)
         {
             socket.Bind(new IPEndPoint(IPAddress.Any, port));
-
             socket.Listen(NumbOfListeners);
-            Task.Run(() => WaitRequestAsync());
+
+            Thread waitRequest = new Thread(new ThreadStart(WaitRequest));
+            waitRequest.Start();
         }
 
-        private void WaitRequestAsync()
+
+        /// <summary>
+        /// Waiting to receive a request from a client
+        /// </summary>
+        private void WaitRequest()
         {
+            var message = new StringBuilder();
+            Socket clientSocket;
+
             while (true)
             {
-                Socket clientSocket = socket.Accept();
-
+                clientSocket = socket.Accept();
                 byte[] buffer = new byte[256];
                 var size = 0;
-                var message = new StringBuilder();
 
                 do
                 {
@@ -46,17 +54,17 @@ namespace Server
                 }
                 while (clientSocket.Available > 0);
 
-                //Console.WriteLine(Encoding.UTF8.GetString(buffer));
-
                 NotifySubs?.Invoke(message.ToString(), ((IPEndPoint)clientSocket.LocalEndPoint).Address.ToString());
                 clientSocket.Send(Encoding.UTF8.GetBytes("Сервер получил сообщение: " + message));
-
-                //Console.ReadKey();
             }
         }
 
+        /// <summary>
+        /// Shuts down the socket
+        /// </summary>
         public void Stop()
         {
+            socket.Shutdown(SocketShutdown.Both);
             socket.Close();
         }
 

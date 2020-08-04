@@ -11,32 +11,48 @@ namespace FourthTask.Tests
     public class TranslateTests
     {
         [Fact]
-        //[TestCaseOrderer("Миша", Language.Russian ExpectedResult = "misha")]
-        //[TestCaseOrderer("Natalia", Language.English, ExpectedResult = "наталиа")]
-        //[TestCaseOrderer("Давай что-то посложнее", Language.Russian, ExpectedResult = "davai chto-to poslojnee")]
-        public void Translate_Rus_To_Eng(/*string message, Language translatedLang, Language LangResult*/)
+        public void Translate_Rus_To_Eng()
         {
-            Client.Client client = new Client.Client();
-            Server.Server server= new Server.Server();
+            Translater t = new Translater();
 
-            server.NumbOfListeners = 5;
+            // arrange
+            string arrange = t.Translate("переведенный текст?", Language.Russian, Language.English);
 
-            //Thread thread = new Thread(new ThreadStart(server.Start));
+            // actual
+            string actual = "perevedennii tekst?";
 
-            MessageKeeper subscriber = new MessageKeeper();
-            client.AddSubscriberMethod(subscriber.Translate);
-            
-            client.Connect(Dns.GetHostName(), 1100);
-            client.SendMessage("Привет, сервачок");
+            // assert
+            Assert.Equal(actual, arrange);
+        }
 
+        [Fact]
+        public void Translate_Eng_To_Rus()
+        {
+            Translater t = new Translater();
 
-            subscriber.Translate("Привет, черепаха!", Language.Russian, Language.English);
+            // arrange
+            string arrange = t.Translate("perevel tekst", Language.English, Language.Russian);
 
+            // actual
+            string actual = "перевел текст";
 
-            //Thread thread = new Thread(new ThreadStart(Server.main));
-            //Thread thread2 =new Thread(new ThreadStart(Client.main));
-            //Server.output();
-            //Client.main();
+            // assert
+            Assert.Equal(actual, arrange);
+        }
+
+        [Fact]
+        public void Translate_Eng_To_Rus2()
+        {
+            Translater t = new Translater();
+
+            // arrange
+            string arrange = t.Translate("eto perevedennii tekst, ведь так?", Language.English, Language.Russian);
+
+            // actual
+            string actual = "ето переведеннии текст, ведь так?";
+
+            // assert
+            Assert.Equal(actual, arrange);
         }
     }
 }

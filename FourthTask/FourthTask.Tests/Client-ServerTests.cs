@@ -2,14 +2,15 @@ using Client;
 using System;
 using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace FourthTask.Tests
 {
-    public class UnitTest1
+    public class Client_Server_Tests
     {
         [Fact]
-        public void SendingMessageFromClientToServer()
+        public void SendingMessageFromClientToServer1()
         {
             Server.Server server = new Server.Server();
             server.Start(555);
@@ -21,16 +22,25 @@ namespace FourthTask.Tests
             client.Connect(Dns.GetHostName(), 555);
             client.SendMessage("привет, сервачок");
             
+            while(subscriber.TranslateResult == null) { }
+            Assert.Equal("server polychil soobshchenie: privet, servuchok", subscriber.TranslateResult);
+        }
 
-            //Thread thread =new Thread(new ThreadStart(Server.main));
-            //Thread thread2 =new Thread(new ThreadStart(Client.main));
-            //Server.output();
-            //Client.main();
-            while(subscriber.TranslateResult == null)
-            {
+        [Fact]
+        public void SendingMessageFromClientToServer2()
+        {
+            Server.Server server = new Server.Server();
+            server.Start(111);
 
-            }
-            string result = subscriber.TranslateResult;
+            Client.Client client = new Client.Client();
+            Translater subscriber = new Translater();
+            client.AddSubscriberMethod(subscriber.Translate);
+
+            client.Connect(Dns.GetHostName(), 111);
+            client.SendMessage("сееееервеееер, ответь");
+
+            while (subscriber.TranslateResult == null) { }
+            Assert.Equal("server polychil soobshchenie: seeeeerveeeer, otvet", subscriber.TranslateResult);
         }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using Client.Enumerables;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Client
@@ -13,17 +15,10 @@ namespace Client
     {
         Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         
-        event Action<string, Language, Language> NotifySubs;
+        event Func<string, Language, Language, string> NotifySubs;
 
         public Language LanguageOfMessage { get; set; } = Language.Russian;
         public Language LanguageNeedToGet { get; set; } = Language.English;
-
-        static void Main(string[] args)
-        {
-            string message = Console.ReadLine();
-
-            
-        }
 
         /// <summary>
         /// Established a connection to a remote host. The host is specified by a host name and a port number.
@@ -39,28 +34,38 @@ namespace Client
         /// <param name="port"></param>
         public void Connect(IPAddress address, int port) => socket.Connect(address, port);
 
-        async public void SendMessage(string message)
+        /// <summary>
+        /// Sends a message to server and wait answer.
+        /// </summary>
+        /// <param name="message">The message you want to send to the server</param>
+        public void SendMessage(string message)
         {
             byte[] data = Encoding.UTF8.GetBytes(message);
+            Thread waiting = new Thread(new ThreadStart(WaitAnswer));
+            waiting.Start();
             socket.Send(data);
-            await Task.Run(() => WaitAnswerAsync());
         }
 
-        private void WaitAnswerAsync()
+        /// <summary>
+        /// Waiting for a response from the server. After receiving a response, triggers an event to notify all subscribers
+        /// </summary>
+        private void WaitAnswer()
         {
             StringBuilder answer = new StringBuilder();
 
-            byte[] buffer = new byte[256];
-            int bytesRec = 0;
+            
+                byte[] buffer = new byte[256];
+                int bytesRec = 0;
 
-            do
-            {
-                bytesRec = socket.Receive(buffer);
-                answer.Append(Encoding.UTF8.GetString(buffer, 0, bytesRec));
-            }
-            while (socket.Available > 0);
+                do
+                {
+                    bytesRec = socket.Receive(buffer);
+                    answer.Append(Encoding.UTF8.GetString(buffer, 0, bytesRec));
+                }
+                while (socket.Available > 0);
 
-            NotifySubs?.Invoke(answer.ToString(), LanguageOfMessage, LanguageNeedToGet);
+                NotifySubs?.Invoke(answer.ToString(), LanguageOfMessage, LanguageNeedToGet);
+            
         }
 
         /// <summary>
@@ -76,14 +81,22 @@ namespace Client
         /// Adds an action to be called after the server responds
         /// </summary>
         /// <param name="action">Action to be performed</param>
-        public void AddSubscriberMethod(Action<string, Language, Language> action) => NotifySubs += action;
+        public void AddSubscriberMethod(Func<string, Language, Language, string> action) => NotifySubs += action;
 
 
         /// <summary>
         /// Removes an action from the queue of actions that are called after an event
         /// </summary>
         /// <param name="action">Action to be taken after notification</param>
-        public void RemoveSubscriberMethod(Action<string, Language, Language> action) => NotifySubs -= action;
+        public void RemoveSubscriberMethod(Func<string, Language, Language, string> action) => NotifySubs -= action;
 
+        /// <summary>
+        /// Stopps the socket
+        /// </summary>
+        public void Stop()
+        {
+            socket.Shutdown(SocketShutdown.Both);
+            socket.Close();
+        }
     }
 }

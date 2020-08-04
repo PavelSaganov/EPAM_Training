@@ -17,17 +17,20 @@ namespace Client
         /// <param name="langOfMessage">Language to be translated</param>
         /// <param name="langOfResultMessage">The language of the message you want to receive</param>
         /// <returns>Translated message</returns>
-        public void Translate(string message, Language langOfMessage, Language langOfResultMessage)
+        public string Translate(string message, Language langOfMessage, Language langOfResultMessage)
         {
-            TranslateResult = message.ToLower();
             Dictionary<string, string> DictToTranslate = GetDictionary(langOfMessage, langOfResultMessage);
+            message =  message.ToLower();
 
-            foreach (char c in TranslateResult)
+            foreach (char c in message)
             {
                 string oldString = c.ToString();
                 if (DictToTranslate.ContainsKey(oldString))
-                    TranslateResult = TranslateResult.Replace(oldString, DictToTranslate[oldString]);
+                    message = message.Replace(oldString, DictToTranslate[oldString]);
             }
+            TranslateResult = message;
+
+            return TranslateResult;
         }
 
         /// <summary>
@@ -50,6 +53,7 @@ namespace Client
                 { "ж", "zh" },
                 { "з", "z" },
                 { "и", "i" },
+                { "й", "i" },
                 { "к", "k" },
                 { "л", "l" },
                 { "м", "m" },
@@ -67,6 +71,8 @@ namespace Client
                 { "ш", "sh" },
                 { "щ", "shch" },
                 { "ы", "i" },
+                { "ъ", "" },
+                { "ь", "" },
                 { "э", "e" },
                 { "ю", "iy" },
                 { "я", "ia" },
@@ -81,7 +87,7 @@ namespace Client
                 { "f", "ф" },
                 { "g", "г" },
                 { "h", "х" },
-                { "i", "ш" },
+                { "i", "и" },
                 { "j", "й" },
                 { "k", "к" },
                 { "l", "л" },

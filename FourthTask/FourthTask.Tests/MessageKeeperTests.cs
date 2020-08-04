@@ -1,8 +1,11 @@
 ﻿using Server;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace FourthTask.Tests
@@ -10,17 +13,21 @@ namespace FourthTask.Tests
     public class MessageKeeperTests
     {
         [Fact]
-        public void Test()
+        public void TryToSave1Message()
         {
             Server.Server server = new Server.Server();
-            server.Start(555);
+            MessageKeeper messageKeeper = new MessageKeeper();
+
+            server.AddSubscriberMethod(messageKeeper.Add);
+            server.Start(101);
 
             Client.Client client = new Client.Client();
-            MessageKeeper messageKeeper = new MessageKeeper();
-            server.AddSubscriberMethod(messageKeeper.Add);
+            client.Connect(Dns.GetHostName(), 101);
+            client.SendMessage("привет, сервачок!");
 
-            client.Connect(Dns.GetHostName(), 555);
-            client.SendMessage("привет, сервачок");
+            Thread.Sleep(500);
+            Assert.True
+                (messageKeeper.ClientsMessages.ElementAt(0).MessagesFromClient.ElementAt(0) == "привет, сервачок!");
         }
     }
 }

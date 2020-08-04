@@ -94,8 +94,6 @@ C:\Users\User\source\repos\EPAM_Training\FourthTask\FourthTask.Tests\obj\Debug\n
 C:\Users\User\source\repos\EPAM_Training\FourthTask\FourthTask.Tests\obj\Debug\netcoreapp3.1\FourthTask.Tests.dll
 C:\Users\User\source\repos\EPAM_Training\FourthTask\FourthTask.Tests\obj\Debug\netcoreapp3.1\FourthTask.Tests.pdb
 C:\Users\User\source\repos\EPAM_Training\FourthTask\FourthTask.Tests\obj\Debug\netcoreapp3.1\FourthTask.Tests.genruntimeconfig.cache
-C:\Users\User\source\repos\EPAM_Training\FourthTask\FourthTask.Tests\bin\Debug\netcoreapp3.1\Client.exe
-C:\Users\User\source\repos\EPAM_Training\FourthTask\FourthTask.Tests\bin\Debug\netcoreapp3.1\Server.exe
 C:\Users\User\source\repos\EPAM_Training\FourthTask\FourthTask.Tests\bin\Debug\netcoreapp3.1\Client.dll
 C:\Users\User\source\repos\EPAM_Training\FourthTask\FourthTask.Tests\bin\Debug\netcoreapp3.1\Server.dll
 C:\Users\User\source\repos\EPAM_Training\FourthTask\FourthTask.Tests\bin\Debug\netcoreapp3.1\Client.pdb
