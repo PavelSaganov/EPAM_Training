@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Client
 {
-    public class Subscriber
+    public class Translater
     {
         public string TranslateResult { get; private set; }
 
@@ -26,7 +26,7 @@ namespace Client
             {
                 string oldString = c.ToString();
                 if (DictToTranslate.ContainsKey(oldString))
-                    TranslateResult.Replace(oldString, DictToTranslate[oldString]);
+                    TranslateResult = TranslateResult.Replace(oldString, DictToTranslate[oldString]);
             }
         }
 

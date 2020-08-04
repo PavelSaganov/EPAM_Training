@@ -18,17 +18,19 @@ namespace FourthTask.Tests
         {
             Client.Client client = new Client.Client();
             Server.Server server= new Server.Server();
+
             server.NumbOfListeners = 5;
 
             //Thread thread = new Thread(new ThreadStart(server.Start));
 
-            Subscriber subscriber = new Subscriber();
+            MessageKeeper subscriber = new MessageKeeper();
             client.AddSubscriberMethod(subscriber.Translate);
-
-            subscriber.Translate("Привет, черепаха!", Language.Russian, Language.English);
-
+            
             client.Connect(Dns.GetHostName(), 1100);
             client.SendMessage("Привет, сервачок");
+
+
+            subscriber.Translate("Привет, черепаха!", Language.Russian, Language.English);
 
 
             //Thread thread = new Thread(new ThreadStart(Server.main));

@@ -11,18 +11,26 @@ namespace FourthTask.Tests
         [Fact]
         public void SendingMessageFromClientToServer()
         {
-            Client.Client client = new Client.Client();
-            Subscriber subscriber = new Subscriber();
-            // client.AddSubscriberMethod(subscriber.Translate);
+            Server.Server server = new Server.Server();
+            server.Start(555);
 
-            client.Connect(Dns.GetHostName(), 1100);
-            client.SendMessage("Привет, сервачок");
+            Client.Client client = new Client.Client();
+            Translater subscriber = new Translater();
+            client.AddSubscriberMethod(subscriber.Translate);
+
+            client.Connect(Dns.GetHostName(), 555);
+            client.SendMessage("привет, сервачок");
             
 
             //Thread thread =new Thread(new ThreadStart(Server.main));
             //Thread thread2 =new Thread(new ThreadStart(Client.main));
             //Server.output();
             //Client.main();
+            while(subscriber.TranslateResult == null)
+            {
+
+            }
+            string result = subscriber.TranslateResult;
         }
     }
 }
