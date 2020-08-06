@@ -1,0 +1,9 @@
+C:\Users\User\source\repos\EPAM_Training\FifthTask\FifthTask\bin\Debug\netcoreapp3.1\Ex1.deps.json
+C:\Users\User\source\repos\EPAM_Training\FifthTask\FifthTask\bin\Debug\netcoreapp3.1\Ex1.dll
+C:\Users\User\source\repos\EPAM_Training\FifthTask\FifthTask\bin\Debug\netcoreapp3.1\Ex1.pdb
+C:\Users\User\source\repos\EPAM_Training\FifthTask\FifthTask\obj\Debug\netcoreapp3.1\Ex1.csprojAssemblyReference.cache
+C:\Users\User\source\repos\EPAM_Training\FifthTask\FifthTask\obj\Debug\netcoreapp3.1\Ex1.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\EPAM_Training\FifthTask\FifthTask\obj\Debug\netcoreapp3.1\Ex1.AssemblyInfo.cs
+C:\Users\User\source\repos\EPAM_Training\FifthTask\FifthTask\obj\Debug\netcoreapp3.1\Ex1.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\EPAM_Training\FifthTask\FifthTask\obj\Debug\netcoreapp3.1\Ex1.dll
+C:\Users\User\source\repos\EPAM_Training\FifthTask\FifthTask\obj\Debug\netcoreapp3.1\Ex1.pdb
