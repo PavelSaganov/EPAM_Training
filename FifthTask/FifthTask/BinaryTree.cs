@@ -4,12 +4,28 @@ using System.Linq;
 
 namespace Ex1
 {
+    [Serializable]
     public class BinaryTree<T>
     {
         public BinaryTree<T> Parent { get; private set; }
         public List<BinaryTree<T>> Children { get; private set; } = new List<BinaryTree<T>>();
         public T Value { get; set; }
         public int Deep { get; private set; }
+        public int BalanceOfNode
+        {
+            get
+            {
+                int leftHight = -1;
+                int rightHight = -1;
+
+                if (Children[0] == null)
+                    leftHight = Children[0].Deep;
+                if (Children[1] == null)
+                    rightHight = Children[1].Deep;
+
+                return leftHight - rightHight;
+            }
+        }
 
         #region Constructors
         public BinaryTree()
@@ -23,6 +39,7 @@ namespace Ex1
         public BinaryTree(BinaryTree<T> Parent, T value)
         {
             this.Parent = Parent;
+            Deep = Parent.Deep + 1;
             Value = value;
         }
 
@@ -30,7 +47,11 @@ namespace Ex1
         /// Creates a root
         /// </summary>
         /// <param name="value"></param>
-        public BinaryTree(T value) : this(null, value) { Deep = 1; }
+        public BinaryTree(T value)
+        {
+            Value = value;
+            Deep = 1;
+        }
 
         /// <summary>
         /// Creates a node
@@ -94,10 +115,15 @@ namespace Ex1
             Children.Remove(child);
         }
 
+        // TODO: нужен паблик сеттер
         public BinaryTree<T> this[int i]
         {
             get => Children.ElementAt(i);
-            // set => Children.ElementAt(i) = value;
+            set
+            {
+                var temp = Children.ElementAt(i);
+                temp = value;
+            }
         }
 
         /// <summary>
@@ -120,15 +146,26 @@ namespace Ex1
             return null;
         }
 
-        public BinaryTree<T> Find(T value)
-        {
+        public BinaryTree<T> Find(T value) => Find(m => m.Value.Equals(value));
 
-            return Find(m => m.Value.Equals(value));
-                
-                
-                //typeof(IEquatable<T>).IsAssignableFrom(typeof(T))
-                //            ? (Predicate<BinaryTree<T>>)(node => (((IEquatable<T>)node.Value).Equals(value)))
-                //            : node => (ReferenceEquals(node.Value, value)));
+        // TODO: Доделай нормально фикс глубины
+        private void FixDeep()
+        {
+            if (Children[0] != null)
+                Deep = Children[0].Deep + 1;
+
+        }
+
+        // TODO: Разберись с поворотом, но сначала фиксани глубину
+        private BinaryTree<T> RightRotate(BinaryTree<T> node)
+        {
+            BinaryTree<T> q = node.Children[0];
+            node.Children[0] = q.Children[1];
+            q.Children[1] = node;
+
+            //fixheight(node);
+            //fixheight(q);
+            return q;
         }
     }
 }

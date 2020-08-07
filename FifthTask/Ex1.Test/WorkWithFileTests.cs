@@ -1,10 +1,11 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 
+
 namespace Ex1.Test
 {
-    public class Tests
+    public class WorkWithFileTests
     {
         [SetUp]
         public void Setup()
@@ -65,7 +66,7 @@ namespace Ex1.Test
         }
 
         [Test]
-        public void FindChildTest()
+        public void Serialize()
         {
             Student student = new Student()
             {
@@ -105,6 +106,10 @@ namespace Ex1.Test
             root.Add(new BinaryTree<Student>(student2));
             root.Add(new BinaryTree<Student>(student3));
 
+            List<BinaryTree<Student>> treeList = new List<BinaryTree<Student>>
+            { root };
+
+            WorkWithFile.XmlSerialize(@"..//BinaryTrees.xml", treeList);
             Assert.Pass();
         }
     }
