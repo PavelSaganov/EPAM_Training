@@ -14,7 +14,7 @@ namespace Ex1
             if (obj == null || this == null)
                 return false;
             Student st = obj as Student;
-            if (st as Student == null)
+            if (st == null)
                 return false;
 
             return st.Name == Name && st.Test.Name == Test.Name && st.Test.Mark == Test.Mark && st.Test.Date == Test.Date;
