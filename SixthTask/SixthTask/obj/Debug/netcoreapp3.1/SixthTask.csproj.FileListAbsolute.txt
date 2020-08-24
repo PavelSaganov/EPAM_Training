@@ -1,0 +1,5 @@
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\bin\Debug\netcoreapp3.1\SixthTask.deps.json
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\bin\Debug\netcoreapp3.1\SixthTask.dll
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.csprojAssemblyReference.cache
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.AssemblyInfo.cs
