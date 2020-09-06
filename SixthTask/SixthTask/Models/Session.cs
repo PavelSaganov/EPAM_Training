@@ -9,7 +9,6 @@ namespace SixthTask.Models
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public List<Exam> Exams { get; set; }
-        public List<PartialCredit> PartialCredits { get; set; }
+        public int GroupId { get; set; }
     }
 }

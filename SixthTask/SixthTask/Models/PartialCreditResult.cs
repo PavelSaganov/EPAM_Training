@@ -6,7 +6,9 @@ namespace SixthTask.Models
 {
     public class PartialCreditResult
     {
-        public int Mark { get; set; }
-        public PartialCredit PartialCredit { get; set; }
+        public int Id { get; set; }
+        public bool IsPassed { get; set; }
+        public int PartialCreditId { get; set; }
+        public int StudentId { get; set; }
     }
 }

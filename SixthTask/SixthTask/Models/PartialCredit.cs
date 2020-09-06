@@ -11,6 +11,6 @@ namespace SixthTask.Models
         public DateTime Date { get; set; }
         public string Name { get; set; }
         public int Mark { get; set; }
-        public Student Student { get; set; }
+        public int SessionId { get; set; }
     }
 }

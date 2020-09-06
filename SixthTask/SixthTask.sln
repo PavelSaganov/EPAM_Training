@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixthTask", "SixthTask\SixthTask.csproj", "{3550C3AD-2B47-4A5D-B347-D3C82FFFE464}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SixthTask", "SixthTask\SixthTask.csproj", "{3550C3AD-2B47-4A5D-B347-D3C82FFFE464}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixthTask.Tests", "SixthTask.Tests\SixthTask.Tests.csproj", "{B1E09B3B-A798-4D3D-9D28-352B794D10D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3550C3AD-2B47-4A5D-B347-D3C82FFFE464}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3550C3AD-2B47-4A5D-B347-D3C82FFFE464}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3550C3AD-2B47-4A5D-B347-D3C82FFFE464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1E09B3B-A798-4D3D-9D28-352B794D10D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1E09B3B-A798-4D3D-9D28-352B794D10D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1E09B3B-A798-4D3D-9D28-352B794D10D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1E09B3B-A798-4D3D-9D28-352B794D10D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

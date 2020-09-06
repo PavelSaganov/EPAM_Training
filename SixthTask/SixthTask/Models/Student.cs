@@ -10,8 +10,7 @@ namespace SixthTask.Models
         public string FirstName { get; set; }
         public string Surname { get; set; }
         public string SecondName { get; set; }
+        public int GroupId { get; set; }
         public DateTime BirthDay { get; set; }
-        public List<Exam> Exams { get; set; }
-        public List<PartialCredit> PartialCredits { get; set; }
     }
 }

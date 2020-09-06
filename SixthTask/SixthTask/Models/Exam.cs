@@ -8,7 +8,7 @@ namespace SixthTask.Models
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
+        public int SessionId { get; set; }
         public string Name { get; set; }
-        public ExamResult Result { get; set; }
     }
 }
