@@ -15,10 +15,8 @@ Create Table Students (
 
 Create Table StudySessions (
  SessionId BIGINT IDENTITY(1,1) CONSTRAINT PK_Sessions PRIMARY KEY,
- GroupId BIGINT,
  StartDate datetime NOT NULL,
- EndDate datetime NOT NULL,
- FOREIGN KEY (GroupId) REFERENCES Groups (GroupId)
+ EndDate datetime NOT NULL
 );
 
 Create Table Exams (
@@ -26,7 +24,9 @@ Create Table Exams (
  SessionId BIGINT,
  ExamDate datetime,
  ExamName char(40) NOT NULL,
- FOREIGN KEY (SessionId) REFERENCES StudySessions (SessionId)
+ GroupId BIGINT,
+ FOREIGN KEY (SessionId) REFERENCES StudySessions (SessionId),
+ FOREIGN KEY (GroupId) REFERENCES Groups (GroupId)
 );
 
 Create Table PartialCredits (
@@ -34,7 +34,9 @@ Create Table PartialCredits (
  SessionId BIGINT,
  PartialCreditDate datetime,
  PartialCreditName char(40) NOT NULL,
- FOREIGN KEY (SessionId) REFERENCES StudySessions (SessionId)
+ GroupId BIGINT,
+ FOREIGN KEY (SessionId) REFERENCES StudySessions (SessionId),
+ FOREIGN KEY (GroupId) REFERENCES Groups (GroupId)
 );
 
 Create Table ExamResults (

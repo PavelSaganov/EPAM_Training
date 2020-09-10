@@ -1,7 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SixthTask.Models;
+using SixthTask.WorkWithDB;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SixthTask.Tests
@@ -17,8 +19,44 @@ namespace SixthTask.Tests
             connection.Open();
 
 
-            List<Student> students = WorkWithDb.Read<Student>();
-            List<Session> session = WorkWithDb.Read<Session>();
+            List<Student> students = ORM.Read<Student>();
+            List<Session> session = ORM.Read<Session>();
+        }
+
+        [TestMethod]
+        public void Create()
+        {
+            connection.Open();
+
+
+            ORM.Create(new Student
+            {
+                GroupId = 2,
+                BirthDay = new DateTime(2020, 3, 5),
+                SecondName = "Petrovich",
+                FirstName = "Evgeniy",
+                Surname = "Kybonin"
+            });
+        }
+
+        [TestMethod]
+        public void Update()
+        {
+            connection.Open();
+
+            List<Student> students = ORM.Read<Student>();
+
+            ORM.Update(students.First(), students.Last());
+            ORM.Delete(students);
+        }
+
+        [TestMethod]
+        public void Delete()
+        {
+            connection.Open();
+
+            List<Student> students = ORM.Read<Student>();
+            ORM.Delete(students);
         }
     }
 }

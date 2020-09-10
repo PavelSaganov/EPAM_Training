@@ -1,7 +1,6 @@
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\obj\Debug\netcoreapp3.1\SixthTask.Tests.csprojAssemblyReference.cache
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\obj\Debug\netcoreapp3.1\SixthTask.Tests.AssemblyInfoInputs.cache
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\obj\Debug\netcoreapp3.1\SixthTask.Tests.AssemblyInfo.cs
-C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\obj\Debug\netcoreapp3.1\SixthTask.Tests.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -100,3 +99,6 @@ C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\obj\Debug\net
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\obj\Debug\netcoreapp3.1\SixthTask.Tests.dll
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\obj\Debug\netcoreapp3.1\SixthTask.Tests.pdb
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\obj\Debug\netcoreapp3.1\SixthTask.Tests.genruntimeconfig.cache
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\obj\Debug\netcoreapp3.1\SixthTask.Tests.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\bin\Debug\netcoreapp3.1\Microsoft.Office.Interop.Excel.dll
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask.Tests\bin\Debug\netcoreapp3.1\office.dll

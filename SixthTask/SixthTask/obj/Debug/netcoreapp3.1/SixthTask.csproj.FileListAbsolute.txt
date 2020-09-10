@@ -3,7 +3,13 @@ C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\bin\Debug\netcoreap
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.csprojAssemblyReference.cache
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.AssemblyInfoInputs.cache
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.AssemblyInfo.cs
-C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\bin\Debug\netcoreapp3.1\SixthTask.pdb
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.dll
 C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.pdb
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\bin\Debug\netcoreapp3.1\Interop.Microsoft.Office.Core.dll
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\Interop.Microsoft.Office.Core.dll
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.csproj.ResolveComReference.cache
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\bin\Debug\netcoreapp3.1\Microsoft.Office.Interop.Excel.dll
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\bin\Debug\netcoreapp3.1\office.dll
+C:\Users\User\source\repos\EPAM_Training\SixthTask\SixthTask\obj\Debug\netcoreapp3.1\SixthTask.csproj.CopyComplete

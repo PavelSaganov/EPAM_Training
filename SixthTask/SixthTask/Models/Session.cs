@@ -4,11 +4,25 @@ using System.Text;
 
 namespace SixthTask.Models
 {
-    public class Session
+    public class Session : IComparable<Session>
     {
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public int GroupId { get; set; }
+
+        public Session()
+        { }
+
+        public Session(params object[] properties)
+        {
+            Id =  Convert.ToInt32(properties[0]);
+            StartDate = (DateTime)properties[1];
+            EndDate = (DateTime)properties[2];
+        }
+
+        int IComparable<Session>.CompareTo(Session other)
+        {
+            return StartDate.CompareTo(other.StartDate);
+        }
     }
 }
