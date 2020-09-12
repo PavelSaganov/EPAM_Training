@@ -25,5 +25,18 @@ namespace SeventhTask.Models
         {
             return FirstName.CompareTo(other.FirstName);
         }
+
+        public override bool Equals(object obj)
+        {
+            Student st = obj as Student;
+            if (st == null)
+                return false;
+            return FirstName == st.FirstName && SecondName == st.SecondName && GroupId == st.GroupId && BirthDay == st.BirthDay;
+        }
+
+        public override int GetHashCode()
+        {
+            return Surname.GetHashCode() + FirstName.GetHashCode() * BirthDay.GetHashCode();
+        }
     }
 }

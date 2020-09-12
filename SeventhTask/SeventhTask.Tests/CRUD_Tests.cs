@@ -51,7 +51,7 @@ namespace SeventhTask.Tests
             // current
             int current = db.GetTable<Student>().ToList().Count;
             // arrange
-            Assert.AreEqual(current + 1, arrange);
+            Assert.AreEqual(current, arrange + 1);
         }
 
         [Test]
@@ -70,7 +70,8 @@ namespace SeventhTask.Tests
             };
 
             CRUD.Update(old, newStudent);
-            Assert.AreEqual(db.GetTable<Student>().Last(), newStudent);
+            
+            Assert.IsTrue(old.Equals(newStudent));
         }
 
         [Test]

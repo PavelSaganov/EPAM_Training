@@ -189,6 +189,10 @@ namespace SeventhTask
             excelApp.Quit();
         }
 
+        /// <summary>
+        /// Writes changes of average mark by the yearss
+        /// </summary>
+        /// <param name="path"></param>
         public static void WriteExcelChangesOfAverageMark(string path)
         {
             Application excelApp = new Application();
@@ -197,51 +201,48 @@ namespace SeventhTask
 
             int rowNumb = 3;
             int colNumb = 2;
-            int yearCol = 2;
             List<Exam> allExams = ((Table<Exam>)CRUD.Read<Exam>()).ToList();
+            var a = allExams.GroupBy(ae => ae.ExamName);
 
-            foreach (var ex in allExams)
+            workSheet.Cells[1, "A"] = "Year";
+            workSheet.Cells[2, "A"] = "Session";
+
+            List<Exam> sameExams = new List<Exam>();
+            foreach (var item in allExams)
+            {
+                if (sameExams.FirstOrDefault(se => se.ExamName == item.ExamName) == null)
+                    sameExams.Add(item);
+            }
+
+            foreach (var ex in sameExams)
             {
                 workSheet.Cells[rowNumb, "A"] = ex.ExamName;
                 rowNumb++;
             }
-            rowNumb = 3;
             List<Session> allSessions = ((Table<Session>)CRUD.Read<Session>()).ToList();
+            allSessions.Sort();
 
             foreach (var session in allSessions)
             {
-                workSheet.Cells[1, GetDictionary()[yearCol]] = session.StartDate.Year;
-                workSheet.Cells[2, GetDictionary()[yearCol]] = $"{session.StartDate} - {session.EndDate}";
+                workSheet.Cells[1, GetDictionary()[colNumb]] = session.StartDate.Year;
+                workSheet.Cells[2, GetDictionary()[colNumb]] = $"{session.StartDate} - {session.EndDate}";
                 List<Exam> examsInSession = ((Table<Exam>)CRUD.Read<Exam>()).ToList().Where(e => e.SessionId == session.SessionId).ToList();
                 List<ExamResult> examResultsInSession = new List<ExamResult>();
 
-                foreach (var er in examsInSession)
+                rowNumb = 3;
+                foreach (var er in sameExams)
                 {
-                    ExamResult examR;
-                    if ((examR = ((Table<ExamResult>)CRUD.Read<ExamResult>()).ToList().FirstOrDefault(e => e.ExamId == er.ExamId)) != null)
-                        examResultsInSession.Add(examR);
-                }
-
-                foreach (var ex in allExams)
-                {
-                    if (ex.SessionId == session.SessionId)
-                        workSheet.Cells[rowNumb, GetDictionary()[colNumb]] = examsInSession.;
-                    else
+                    try
+                    {
+                        workSheet.Cells[rowNumb, GetDictionary()[colNumb]] = GetAverageMarkInSession(session, er.ExamName).ToString("#.##");
+                    }
+                    catch
+                    {
                         workSheet.Cells[rowNumb, GetDictionary()[colNumb]] = "-";
-
+                    }
                     rowNumb++;
                 }
-
                 colNumb++;
-                foreach (var ex in examsInSession)
-                {
-                    workSheet.Cells[rowNumb, GetDictionary()[colNumb]] =
-                        ((Table<ExamResult>)CRUD.Read<ExamResult>()).ToList().Where(er => er.ExamId == ex.ExamId).Average(er => er.Mark);
-                    rowNumb++;
-                }
-                colNumb = 1;
-                rowNumb++;
-                yearCol++;
             }
 
             workBook.Close(true, path);
@@ -307,27 +308,18 @@ namespace SeventhTask
         }
 
         /// <summary>
-        /// Get average mark in the group
+        /// Calculates average mark in session
         /// </summary>
-        /// <param name="group"></param>
+        /// <param name="session"></param>
+        /// <param name="examName">Name of exam average mark you want to get</param>
         /// <returns></returns>
-        private static double GetAverageExamResultInSession(Session session)
+        private static double GetAverageMarkInSession(Session session, string examName)
         {
-            List<Exam> examsInSession = ((Table<Exam>)CRUD.Read<Exam>()).ToList().Where(e => e.SessionId == session.SessionId).ToList();
-            List<ExamResult> examsResultsInSession = ((Table<ExamResult>)CRUD.Read<ExamResult>()).ToList().Where(e => e.SessionId == session.SessionId).ToList();
-
-
-            List<Student> students = ((Table<Student>)CRUD.Read<Student>()).ToList().Where(s => s.GroupId == group.GroupId).ToList();
-            List<ExamResult> examResults = ((Table<ExamResult>)CRUD.Read<ExamResult>()).ToList();
-            double average = 0;
-            foreach (var st in students)
-            {
-                List<ExamResult> studentExams;
-                if ((studentExams = examResults.Where(er => er.StudentId == st.StudentId).ToList()).Count != 0)
-                    average = studentExams.Average(er => er.Mark);
-            }
-
-            return average;
+            Exam exam = ((Table<Exam>)CRUD.Read<Exam>()).ToList().FirstOrDefault(e => e.SessionId == session.SessionId && e.ExamName == examName);
+            if (exam == null)
+                throw new Exception();
+            List<ExamResult> examResults = ((Table<ExamResult>)CRUD.Read<ExamResult>()).ToList().Where(e => e.ExamId == exam.ExamId).ToList();
+            return examResults.Average(e => e.Mark);
         }
 
         /// <summary>

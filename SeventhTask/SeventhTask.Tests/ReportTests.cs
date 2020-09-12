@@ -55,6 +55,12 @@ namespace SeventhTask.Tests
         }
 
         [Test]
+        public void WriteChangesOfAverageMark()
+        {
+            Reports.WriteExcelChangesOfAverageMark(Directory.GetCurrentDirectory() + @"..\..\..\..\..\ChangesOfAverageMark.xlsx");
+        }
+
+        [Test]
         public void GetExpulsionList()
         {
             var groups = ((Table<Group>)CRUD.Read<Group>()).ToList();
