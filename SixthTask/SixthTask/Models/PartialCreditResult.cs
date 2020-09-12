@@ -6,7 +6,7 @@ namespace SixthTask.Models
 {
     public class PartialCreditResult : IComparable<PartialCreditResult>
     {
-        public int Id { get; set; }
+        public int PartialCreditResultId { get; set; }
         public bool IsPassed { get; set; }
         public int PartialCreditId { get; set; }
         public int StudentId { get; set; }
@@ -16,7 +16,7 @@ namespace SixthTask.Models
 
         public PartialCreditResult(params object[] properties)
         {
-            Id =  Convert.ToInt32(properties[0]);
+            PartialCreditResultId =  Convert.ToInt32(properties[0]);
             PartialCreditId =  Convert.ToInt32(properties[1]);
             StudentId =  Convert.ToInt32(properties[2]);
             IsPassed = (bool)properties[3];
@@ -24,7 +24,7 @@ namespace SixthTask.Models
 
         public override string ToString()
         {
-            return $"{ Id }, { PartialCreditId }, { StudentId }, '{ IsPassed }'";
+            return $"{ PartialCreditResultId }, { PartialCreditId }, { StudentId }, '{ IsPassed }'";
         }
 
         int IComparable<PartialCreditResult>.CompareTo(PartialCreditResult other)

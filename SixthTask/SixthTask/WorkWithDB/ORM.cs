@@ -22,18 +22,17 @@ namespace SixthTask.WorkWithDB
             string propertyName = "";
             string values = "";
             var properties = typeof(T).GetProperties();
+            var idProp = properties.FirstOrDefault(p => p.Name.Contains("Id"));
 
-            foreach (var item in properties)
+            foreach (var item in properties.SkipWhile(p => p == idProp))
             {
                 propertyName += item.Name;
                 if (properties.Last() != item)
                     propertyName += ", ";
-                if (item.GetValue(model).GetType() != typeof(int))
-                    values += $"'{item.GetValue(model)}' ";
-                else
-                    values += $"{item.GetValue(model)} ";
+                values += $"{item.GetValue(model)}, ";
             }
 
+            values = values.Remove(values.Length - 2, 1);
             CRUD.Create(DefineTableName(model.GetType()), propertyName, values);
         }
 
@@ -77,25 +76,26 @@ namespace SixthTask.WorkWithDB
         /// <param name="newModel">New model</param>
         public static void Update<T>(T oldModel, T newModel)
         {
-            string values = "";
+            string attributies = "";
             string condition = "";
             var properties = typeof(T).GetProperties();
+            var idProp = properties.FirstOrDefault(p => p.Name.Contains("Id"));
 
-            foreach (var item in properties)
+            condition += $"{idProp.Name} = { idProp.GetValue(oldModel) }";
+
+            foreach (var item in properties.SkipWhile(p => p == idProp))
             {
-                if (item.Name != "Id")
-                    item.SetValue(oldModel, item.GetValue(newModel));
+                item.SetValue(oldModel, item.GetValue(newModel));
+                if (item.PropertyType == typeof(int))
+                    attributies += $"{ item.Name } = { item.GetValue(oldModel) }";
                 else
-                    condition += $"{ item.Name } = { item.GetValue(oldModel) }";
-                if (item.GetValue(oldModel).GetType() != typeof(int))
-                    values += $"{ item.Name } = '{ item.GetValue(oldModel) }'";
-                else
-                    values += $"{item.GetValue(oldModel)}";
+                    attributies += $"{ item.Name } = '{ item.GetValue(oldModel) }'";
+
                 if (properties.Last() != item)
-                    values += ", ";
+                    attributies += ", ";
             }
 
-            CRUD.Update(DefineTableName(typeof(T)), values, condition);
+            CRUD.Update(DefineTableName(typeof(T)), attributies, condition);
         }
 
         /// <summary>
@@ -105,32 +105,22 @@ namespace SixthTask.WorkWithDB
         /// <param name="models">Models that you want to delete</param>
         public static void Delete<T>(T model)
         {
-            string condition = "";
             var properties = typeof(T).GetProperties();
+            var idProp = properties.FirstOrDefault(p => p.Name.Contains("Id"));
 
-            foreach (var i in properties)
-            {
-                condition += $"{ i.Name } = ";
-                if (i.GetValue(model).GetType() != typeof(int))
-                    condition += $"'{i.GetValue(model)}' ";
-                else
-                    condition += $"{i.GetValue(model)} ";
-                if (properties.Last() != i)
-                    condition += " AND ";
-            }
+            CRUD.Delete(DefineTableName(typeof(T)), $"{idProp.Name} = {idProp.GetValue(model)}");
 
-            CRUD.Delete(DefineTableName(typeof(T)), condition);
         }
 
         public static List<Student> CreateExpulsionList(Group group)
         {
-            List<Student> students = Read<Student>().Where(s => s.GroupId == group.Id).ToList();
+            List<Student> students = Read<Student>().Where(s => s.GroupId == group.GroupId).ToList();
             List<ExamResult> examResults = Read<ExamResult>();
             List<Student> result = new List<Student>();
 
             foreach (var st in students)
             {
-                if (examResults.Where(e => e.StudentId == st.Id).Count(e => e.Mark < 4) >= 3)
+                if (examResults.Where(e => e.StudentId == st.StudentId).Count(e => e.Mark < 4) >= 3)
                     result.Add(st);
             }
             return result;

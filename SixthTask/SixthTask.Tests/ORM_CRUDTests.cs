@@ -9,7 +9,7 @@ using System.Text;
 namespace SixthTask.Tests
 {
     [TestClass]
-    public class CRUDTests
+    public class ORM_CRUDTests
     {
         ConnectionToDB connection = new ConnectionToDB(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=University; Integrated Security=True");
 
@@ -18,16 +18,16 @@ namespace SixthTask.Tests
         {
             connection.Open();
 
-
             List<Student> students = ORM.Read<Student>();
             List<Session> session = ORM.Read<Session>();
+            connection.Close();
+
         }
 
         [TestMethod]
         public void Create()
         {
             connection.Open();
-
 
             ORM.Create(new Student
             {
@@ -37,6 +37,8 @@ namespace SixthTask.Tests
                 FirstName = "Evgeniy",
                 Surname = "Kybonin"
             });
+            connection.Close();
+
         }
 
         [TestMethod]
@@ -45,9 +47,19 @@ namespace SixthTask.Tests
             connection.Open();
 
             List<Student> students = ORM.Read<Student>();
+            var newStudent = new Student
+            {
+                GroupId = 2,
+                BirthDay = new DateTime(2020, 3, 5),
+                SecondName = "Sergeevich",
+                FirstName = "Anatoliy",
+                Surname = "Kybonin"
+            };
 
-            ORM.Update(students.First(), students.Last());
-            ORM.Delete(students);
+            ORM.Update(students.Last(), newStudent);
+            Assert.AreEqual(newStudent, students.Last());
+            connection.Close();
+
         }
 
         [TestMethod]
@@ -56,7 +68,18 @@ namespace SixthTask.Tests
             connection.Open();
 
             List<Student> students = ORM.Read<Student>();
-            ORM.Delete(students);
+
+            // Arrange
+            int arrange = students.Count;
+            ORM.Delete(students.Last());
+
+            // Current
+            int current = ORM.Read<Student>().Count;
+
+            // Assert
+            Assert.AreEqual(arrange - 1, current);
+            connection.Close();
+
         }
     }
 }

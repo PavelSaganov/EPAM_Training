@@ -6,7 +6,7 @@ namespace SixthTask.Models
 {
     public class Session : IComparable<Session>
     {
-        public int Id { get; set; }
+        public int SessionId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
@@ -15,7 +15,7 @@ namespace SixthTask.Models
 
         public Session(params object[] properties)
         {
-            Id =  Convert.ToInt32(properties[0]);
+            SessionId =  Convert.ToInt32(properties[0]);
             StartDate = (DateTime)properties[1];
             EndDate = (DateTime)properties[2];
         }

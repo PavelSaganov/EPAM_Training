@@ -6,7 +6,7 @@ namespace SixthTask.Models
 {
     public class Group : IComparable<Group>
     {
-        public int Id { get; set; }
+        public int GroupId { get; set; }
         public string Name { get; set; }
 
         public Group()
@@ -14,13 +14,13 @@ namespace SixthTask.Models
 
         public Group(params object[] properties)
         {
-            Id = Convert.ToInt32(properties[0]);
+            GroupId = Convert.ToInt32(properties[0]);
             Name = (string)properties[1];
         }
 
         public override string ToString()
         {
-            return $"{ Id }, '{ Name }'";
+            return $"{ GroupId }, '{ Name }'";
         }
 
         int IComparable<Group>.CompareTo(Group other)

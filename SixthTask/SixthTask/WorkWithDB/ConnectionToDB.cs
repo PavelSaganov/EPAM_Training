@@ -30,7 +30,7 @@ namespace SixthTask
         /// <summary>
         /// Open connection
         /// </summary>
-        public void Open() => connection.Open();
+        public void Open() => connection?.Open();
 
         /// <summary>
         /// Set connection path

@@ -18,14 +18,14 @@ namespace SixthTask
         public static List<Student> CreateExpulsionList(Group group)
         {
             List<ExamResult> examResults = ORM.Read<ExamResult>();
-            List<Student> students = ORM.Read<Student>().Where(s => s.GroupId == group.Id).ToList();
+            List<Student> students = ORM.Read<Student>().Where(s => s.GroupId == group.GroupId).ToList();
             List<Student> result = new List<Student>();
             foreach (var st in students)
             {
-                if (examResults.Where(e => e.StudentId == st.Id).Count(e => e.Mark < 4) >= 3)
+                if (examResults.Where(e => e.StudentId == st.StudentId).Count(e => e.Mark < 4) >= 3)
                     result.Add(st);
             }
-            
+
             return result.Distinct().ToList();
         }
 
@@ -41,12 +41,12 @@ namespace SixthTask
 
             Worksheet workSheet = (Worksheet)workBook.ActiveSheet;
             List<PartialCreditResult> partialCreditResults = ORM.Read<PartialCreditResult>();
-            List<Exam> exams = ORM.Read<Exam>().Where(e => e.SessionId == session.Id).ToList();
+            List<Exam> exams = ORM.Read<Exam>().Where(e => e.SessionId == session.SessionId).ToList();
             List<Group> groups = new List<Group>();
 
             foreach (var g in ORM.Read<Group>())
             {
-                exams.ForEach(e => { if (e.GroupId == g.Id) groups.Add(g); });
+                exams.ForEach(e => { if (e.GroupId == g.GroupId) groups.Add(g); });
             }
             groups.Distinct();
 
@@ -66,11 +66,11 @@ namespace SixthTask
                 workSheet.Cells[rowNumb, "A"] = $"{ g.Name }";
                 rowNumb++;
 
-                List<Student> students = ORM.Read<Student>().Where(s => s.GroupId == g.Id).ToList();
+                List<Student> students = ORM.Read<Student>().Where(s => s.GroupId == g.GroupId).ToList();
                 foreach (var st in students)
                 {
                     workSheet.Cells[rowNumb, "A"] = $"{ st.FirstName } { st.SecondName } { st.Surname }";
-                    List<ExamResult> examResults = ORM.Read<ExamResult>().Where(er => er.StudentId == st.Id).ToList();
+                    List<ExamResult> examResults = ORM.Read<ExamResult>().Where(er => er.StudentId == st.StudentId).ToList();
                     colNumb = 2;
                     foreach (var ex in examResults)
                     {
@@ -124,12 +124,12 @@ namespace SixthTask
         /// <returns></returns>
         private static int GetMaxMark(Group group)
         {
-            List<Student> students = ORM.Read<Student>().Where(s => s.GroupId == group.Id).ToList();
+            List<Student> students = ORM.Read<Student>().Where(s => s.GroupId == group.GroupId).ToList();
             List<ExamResult> examResults = ORM.Read<ExamResult>();
             int max = 0;
             foreach (var st in students)
             {
-                if ((examResults = examResults.Where(er => er.StudentId == st.Id && er.Mark >= max).ToList()).Count != 0)
+                if ((examResults = examResults.Where(er => er.StudentId == st.StudentId && er.Mark >= max).ToList()).Count != 0)
                     max = examResults.Max(er => er.Mark);
             }
 
@@ -143,12 +143,12 @@ namespace SixthTask
         /// <returns></returns>
         private static int GetMinMark(Group group)
         {
-            List<Student> students = ORM.Read<Student>().Where(s => s.GroupId == group.Id).ToList();
+            List<Student> students = ORM.Read<Student>().Where(s => s.GroupId == group.GroupId).ToList();
             List<ExamResult> examResults = ORM.Read<ExamResult>();
             int min = 0;
             foreach (var st in students)
             {
-                if ((examResults = examResults.Where(er => er.StudentId == st.Id && er.Mark >= min).ToList()).Count != 0)
+                if ((examResults = examResults.Where(er => er.StudentId == st.StudentId && er.Mark >= min).ToList()).Count != 0)
                     min = examResults.Min(er => er.Mark);
             }
 
@@ -162,12 +162,14 @@ namespace SixthTask
         /// <returns></returns>
         private static double GetAverageMark(Group group)
         {
-            List<Student> students = ORM.Read<Student>().Where(s => s.GroupId == group.Id).ToList();
+            List<Student> students = ORM.Read<Student>().Where(s => s.GroupId == group.GroupId).ToList();
             List<ExamResult> examResults = ORM.Read<ExamResult>();
             double average = 0;
             foreach (var st in students)
             {
-                average = examResults.Where(er => er.StudentId == st.Id).Average(er => er.Mark);
+                List<ExamResult> studentExams;
+                if ((studentExams = examResults.Where(er => er.StudentId == st.StudentId).ToList()).Count != 0)
+                    average = studentExams.Average(er => er.Mark);
             }
 
             return average;

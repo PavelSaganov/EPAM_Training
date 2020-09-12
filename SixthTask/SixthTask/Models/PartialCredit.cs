@@ -6,7 +6,7 @@ namespace SixthTask.Models
 {
     public class PartialCredit : IComparable<PartialCredit>
     {
-        public int Id { get; set; }
+        public int PartialCreditId { get; set; }
 
         public DateTime Date { get; set; }
         public string Name { get; set; }
@@ -18,7 +18,7 @@ namespace SixthTask.Models
 
         public PartialCredit(params object[] properties)
         {
-            Id =  Convert.ToInt32(properties[0]);
+            PartialCreditId =  Convert.ToInt32(properties[0]);
             SessionId =  Convert.ToInt32(properties[1]);
             Date = (DateTime)properties[2];
             GroupId =  Convert.ToInt32(properties[3]);
@@ -26,7 +26,7 @@ namespace SixthTask.Models
 
         public override string ToString()
         {
-            return $"{ Id }, { SessionId }, '{ Date }'";
+            return $"{ PartialCreditId }, { SessionId }, '{ Date }'";
         }
 
         int IComparable<PartialCredit>.CompareTo(PartialCredit other)

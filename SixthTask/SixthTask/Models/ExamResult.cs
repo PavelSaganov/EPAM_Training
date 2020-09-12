@@ -7,7 +7,7 @@ namespace SixthTask.Models
 {
     public class ExamResult : IComparable<ExamResult>
     {
-        public int Id { get; set; }
+        public int ExamResultId { get; set; }
         public int Mark { get; set; }
         public int ExamId { get; set; }
         public int StudentId { get; set; }
@@ -17,14 +17,14 @@ namespace SixthTask.Models
 
         public ExamResult(params object[] properties)
         {
-            Id =  Convert.ToInt32(properties[0]);
+            ExamResultId =  Convert.ToInt32(properties[0]);
             ExamId =  Convert.ToInt32(properties[1]);
             StudentId =  Convert.ToInt32(properties[2]);
             Mark =  Convert.ToInt32(properties[3]);
         }
         public override string ToString()
         {
-            return $"{ Id } { ExamId } { StudentId } { Mark }";
+            return $"{ ExamResultId } { ExamId } { StudentId } { Mark }";
         }
 
         int IComparable<ExamResult>.CompareTo(ExamResult other)

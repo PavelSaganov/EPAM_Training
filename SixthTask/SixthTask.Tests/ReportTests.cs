@@ -3,6 +3,7 @@ using SixthTask.Models;
 using SixthTask.WorkWithDB;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -20,7 +21,8 @@ namespace SixthTask.Tests
 
             var session = ORM.Read<Session>();
 
-            Reports.WriteExcelMaxAverageMin(session.First(), @"E:\MAMForSession.xlsx");
+            Reports.WriteExcelMaxAverageMin(session.First(), Directory.GetCurrentDirectory() + @"..\..\..\..\..\MAMForSession.xlsx");
+            connection.Close();
         }
 
         [TestMethod]
@@ -30,7 +32,8 @@ namespace SixthTask.Tests
 
             var session = ORM.Read<Session>();
 
-            Reports.WriteExcelSessionResult(session.First(), @"E:\SessionResult.xlsx");
+            Reports.WriteExcelSessionResult(session.First(), Directory.GetCurrentDirectory() + @"..\..\..\..\..\SessionResult.xlsx");
+            connection.Close();
         }
 
         [TestMethod]
@@ -41,6 +44,8 @@ namespace SixthTask.Tests
             var groups = ORM.Read<Group>();
 
             var result = Reports.CreateExpulsionList(groups.ElementAt(1));
+            Assert.AreEqual(1, result.Count);
+            connection.Close();
         }
     }
 }

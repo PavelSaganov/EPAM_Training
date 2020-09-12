@@ -6,7 +6,7 @@ namespace SixthTask.Models
 {
     public class Student : IComparable<Student>
     {
-        public int Id { get; set; }
+        public int StudentId { get; set; }
         public string FirstName { get; set; }
         public string Surname { get; set; }
         public string SecondName { get; set; }
@@ -18,7 +18,7 @@ namespace SixthTask.Models
 
         public Student(object[] properties)
         {
-            Id = Convert.ToInt32(properties[0]);
+            StudentId = Convert.ToInt32(properties[0]);
             GroupId = Convert.ToInt32(properties[1]);
             FirstName = (string)properties[2];
             Surname = (string)properties[3];
@@ -26,9 +26,20 @@ namespace SixthTask.Models
             BirthDay = (DateTime)properties[5];
         }
 
-        public override string ToString()
+        public override bool Equals(object obj)
         {
-            return $"{ Id }, { GroupId }, '{ FirstName }', '{ Surname }', '{ SecondName }', '{ BirthDay }'";
+            if (obj == null)
+                return false;
+            Student m = obj as Student; // возвращает null если объект нельзя привести к типу Money
+            if (m as Student == null)
+                return false;
+
+            return m.GroupId == GroupId && m.FirstName == FirstName && m.BirthDay == BirthDay && m.Surname == Surname && m.SecondName == SecondName;
+        }
+
+        public override int GetHashCode()
+        {
+            return GroupId.GetHashCode() * SecondName.GetHashCode() * FirstName.GetHashCode() + Surname.GetHashCode() * BirthDay.GetHashCode();
         }
 
         int IComparable<Student>.CompareTo(Student other)
